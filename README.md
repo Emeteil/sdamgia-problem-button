@@ -12,7 +12,7 @@
 
 1. Перейдите на сайт: [https://problem-button-sdamgia.dimavorobiev.repl.co/](https://problem-button-sdamgia.dimavorobiev.repl.co/)
 2. Следуйте инструкциям на странице.
-3. После установки плагина и нажатия на кнопку "sdamgia-button.user.js", откроется страница скрипта на Tampermonkey.
+3. После установки плагина и нажатия на кнопки "sdamgia-button.user.js", откроется страница скрипта на Tampermonkey.
 4. Нажмите на кнопку "Установить" (см. скриншот ниже).
 
 ![image](https://github.com/Emeteil/sdamgia-problem-button/assets/94739287/4ec73748-9baa-4aab-8706-46ecdc3834b5)
