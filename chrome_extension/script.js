@@ -1,3 +1,5 @@
+const hiddenAnswer = true;
+
 (function () {
     'use strict';
 
@@ -15,14 +17,16 @@
             if (!decisionLink) {
                 var probNums = probView.querySelector('span.prob_nums');
                 probNums.innerText = probNums.innerText + " №";
-                decisionLink = probNums.parentNode.insertBefore(answerLink, probNums.nextSibling);
+                probNums.parentNode.insertBefore(answerLink, probNums.nextSibling);
             }
             try {
-                var response = await fetch(answerLink.href);
-                var data = await response.text();
-                var answer = data.match(/Ответ:?<\/span>.*\./)[0].replace("<\/span>", "").split("<\/")[0].split("Ответ")[1];
-                probView.insertAdjacentHTML("beforeEnd", `<details style="font-weight: normal; margin-left: 4px;"> <summary>Ответ</summary> <div style="position: absolute; transform: translate(47px, -19.2px);">${answer}</div> </details>`);
-                probView.style = "margin-bottom: 15px;";
+                if (hiddenAnswer) {
+                    var response = await fetch(answerLink.href);
+                    var data = await response.text();
+                    var answer = data.match(/>Ответ:?.*<\//)[0].replace("<\/span>", "").split("<\/")[0].split(">Ответ")[1];
+                    probView.insertAdjacentHTML("beforeEnd", `<details style="font-weight: normal; margin-left: 4px;"> <summary>Ответ</summary> <div style="position: absolute; transform: translate(47px, -19.2px);">${answer}</div> </details>`);
+                    probView.style = "margin-bottom: 15px;";
+                }
             } catch (e) {
                 console.error(e);
             }
