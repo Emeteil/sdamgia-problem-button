@@ -6,7 +6,7 @@ const hiddenAnswer = true;
     var probViews = document.querySelectorAll('div.prob_view');
 
     probViews.forEach(async function (probView) {
-        var commentsId = probView.querySelector('div[id^="comments"]');
+        var commentsId = probView.querySelector('div[id^="comments"]'); // Stopped working as of 05.03.2024!
         var decisionLink = probView.querySelector('a[href^="/problem?id="]');
         if (commentsId) {
             var id = commentsId.id.replace("comments", "");
@@ -19,17 +19,17 @@ const hiddenAnswer = true;
                 probNums.innerText = probNums.innerText + " №";
                 probNums.parentNode.insertBefore(answerLink, probNums.nextSibling);
             }
-            try {
-                if (hiddenAnswer) {
-                    var response = await fetch(answerLink.href);
-                    var data = await response.text();
-                    var answer = data.match(/>Ответ:?.*<\//)[0].replace("<\/span>", "").split("<\/")[0].split(">Ответ")[1];
-                    probView.insertAdjacentHTML("beforeEnd", `<details style="font-weight: normal; margin-left: 4px;"> <summary>Ответ</summary> <div style="position: absolute; transform: translate(47px, -19.2px);">${answer}</div> </details>`);
-                    probView.style = "margin-bottom: 15px;";
-                }
-            } catch (e) {
-                console.error(e);
+	    }
+        try {
+            if (hiddenAnswer) {
+                var response = await fetch(decisionLink ? decisionLink.href : answerLink.href);
+                var data = await response.text();
+                var answer = data.match(/>Ответ:?.*<\//)[0].replace("<\/span>", "").split("<\/")[0].split(">Ответ")[1];
+                probView.insertAdjacentHTML("beforeEnd", `<details style="font-weight: normal; margin-left: 4px;"> <summary>Ответ</summary> <div style="position: absolute; transform: translate(47px, -19.2px);">${answer}</div> </details>`);
+                probView.style = "margin-bottom: 15px;";
             }
+        } catch (e) {
+            console.error(e);
         }
     });
 })();
