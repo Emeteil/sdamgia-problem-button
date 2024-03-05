@@ -4,8 +4,8 @@
 // @author Emeteil
 // @homepageURL https://github.com/Emeteil/sdamgia-problem-button
 // @supportURL https://github.com/Emeteil/sdamgia-problem-button/issues
-// @downloadURL https://problem-button-sdamgia.dimavorobiev.repl.co/sdamgia-button.user.js
-// @updateURL https://problem-button-sdamgia.dimavorobiev.repl.co/sdamgia-button.user.js
+// @downloadURL https://raw.githubusercontent.com/Emeteil/sdamgia-problem-button/main/tampermonkey/script.js
+// @updateURL https://raw.githubusercontent.com/Emeteil/sdamgia-problem-button/main/tampermonkey/script.js
 // @description Adds a problem button where there isn't one.
 // @icon https://math-ege.sdamgia.ru/icon.svg
 // @match https://*.sdamgia.ru/test*
