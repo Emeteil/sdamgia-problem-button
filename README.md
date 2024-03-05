@@ -16,7 +16,7 @@
 Чтобы установить **Problem button on sdamgia.ru**, выполните следующие шаги:
 
 1. Установите расширение [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-2. После установки плагина перейдите по ссылке: [https://raw.githubusercontent.com/Emeteil/sdamgia-problem-button/main/tampermonkey/script.js](https://raw.githubusercontent.com/Emeteil/sdamgia-problem-button/main/tampermonkey/script.js)
+2. После установки плагина перейдите по ссылке: [https://raw.githubusercontent.com/Emeteil/sdamgia-problem-button/main/tampermonkey/script.js](https://raw.githubusercontent.com/Emeteil/sdamgia-problem-button/main/tampermonkey/script.user.js)
 3. Нажмите на кнопку "Установить" (см. скриншот ниже).
 
 ![image](https://github.com/Emeteil/sdamgia-problem-button/assets/94739287/4ec73748-9baa-4aab-8706-46ecdc3834b5)
